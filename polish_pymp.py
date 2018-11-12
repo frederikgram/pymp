@@ -7,7 +7,7 @@ def parse(tokens):
 def lex(string):
     return [int(x) if x.isdigit() else x for x in string.split(' ')]
 
-l = "+ 22 3"
-print(lex(l))
-print(parse(lex(l)))
-# >> 10
+l = "+ 22 / 19 ^ 2 9"
+print("tokens:", lex(l))
+print("result:", parse(lex(l)))
+# >> 23.727272727272727
