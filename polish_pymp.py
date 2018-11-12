@@ -9,5 +9,5 @@ def lex(string):
     return [int(x) if x.isdigit() else x for x in list(string)]
 
 l = "+2*42-42/23"
-
 print(parse(lex(l)))
+# >> 10
