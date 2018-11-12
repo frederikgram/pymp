@@ -5,8 +5,9 @@ def parse(tokens):
 
 
 def lex(string):
-    return [int(x) if x.isdigit() else x for x in list(string)]
+    return [int(x) if x.isdigit() else x for x in string.split(' ')]
 
-l = "+2*42-42/23"
+l = "+ 22 3"
+print(lex(l))
 print(parse(lex(l)))
 # >> 10
