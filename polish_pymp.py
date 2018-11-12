@@ -1,8 +1,7 @@
 def parse(tokens):
     """ Recursively parses polish notation"""
 
-    args = [parse(tokens[arg_n+1:]) if type(tokens[arg_n + 1]) != int else tokens[arg_n + 1] for arg_n in range(2)]
-    return eval("{0}{1}{2}".format(args[0], tokens[0], args[1]))
+    return eval("{1}{0}{2}".format(tokens[0], *[parse(tokens[arg_n+1:]) if type(tokens[arg_n+1]) != int else tokens[arg_n+1] for arg_n in range(2)]))
 
 
 def lex(string):
